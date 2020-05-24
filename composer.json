@@ -1,0 +1,38 @@
+{
+  "name": "devop-studio/captcha-bundle",
+  "description": "Symfony Implementation Of hCaptcha",
+  "keywords": [
+    "captcha",
+    "hcaptcha",
+    "captcha-bundle"
+  ],
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Zlatin Hristov",
+      "email": "zlatin.hristov@devop.studio"
+    },
+    {
+      "name": "DevOp Studio Ltd",
+      "homepage": "https://www.devop.studio"
+    }
+  ],
+  "require": {
+    "php": "^7.1.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "DevOpStudio\\Bundle\\CaptchaBundle\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "dev",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
