@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="devop_studio_captcha.verify" class="DevOpStudio\Bundle\CaptchaBundle\Util\CaptchaVerify">
+            <argument type="service" id="request_stack"/>
+            <argument>%devop_studio_captcha.secret%</argument>
+        </service>
+        <service id="devop_studio_captcha.form.type" class="DevOpStudio\Bundle\CaptchaBundle\Form\Type\CaptchaType">
+            <argument>%devop_studio_captcha.sitekey%</argument>
+            <tag name="form.type"/>
+        </service>
+        <service id="devop_studio_captcha.form.validator" class="DevOpStudio\Bundle\CaptchaBundle\Validator\Constraints\CaptchaValidator">
+            <argument type="service" id="devop_studio_captcha.verify"/>
+            <tag name="validator.constraint_validator" alias="devop_studio_captcha.validator"></tag>
+        </service>
+    </services>
+</container>
